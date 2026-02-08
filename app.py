@@ -1,12 +1,13 @@
 from flask import Flask
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello from Docker Flask App"
+    return "Hello from Docker Flask App!"
 
-if _name_ == "_main_":
-    app.run(host="0.0.0.0")
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 
 
