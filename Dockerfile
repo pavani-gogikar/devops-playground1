@@ -5,11 +5,15 @@ RUN apt-get update && \
     pip3 install flask && \
     rm -rf /var/lib/apt/lists/*
 
-COPY app.py /opt/app.py
+WORKDIR /opt
+
+COPY app.py app.py
 
 EXPOSE 5000
 
-CMD ["python3", "/opt/app.py"]
+CMD ["python3", "app.py"]
+
+
 
 
 
